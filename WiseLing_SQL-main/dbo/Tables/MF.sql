@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[MF] (
+    [MID]   INT      NOT NULL,
+    [FID]   INT      NOT NULL,
+    [Since] DATETIME DEFAULT (getdate()) NULL,
+    CONSTRAINT [PK_MF] PRIMARY KEY CLUSTERED ([MID] ASC, [FID] ASC),
+    CONSTRAINT [FK_MF_FID] FOREIGN KEY ([FID]) REFERENCES [dbo].[Forum] ([FID]),
+    CONSTRAINT [FK_MF_MID] FOREIGN KEY ([MID]) REFERENCES [dbo].[Member] ([MID])
+);
+

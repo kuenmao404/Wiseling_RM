@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[MapH] (
+    [MapID] INT NOT NULL,
+    [HID]   INT NOT NULL,
+    CONSTRAINT [PK_MapH] PRIMARY KEY CLUSTERED ([MapID] ASC, [HID] ASC),
+    CONSTRAINT [FK_MapH_MapID] FOREIGN KEY ([MapID]) REFERENCES [dbo].[CalendarHeatMap] ([MapID])
+);
+

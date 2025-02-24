@@ -1,0 +1,40 @@
+image: node:16
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  - npm install
+
+build:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+  tags:
+    - runner
+  only:
+    - Deployment
+
+deploy:
+  stage: deploy
+  script:
+    - apt-get update -y
+    - apt-get install -y sshpass
+    - |
+      sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST << 'EOF'
+      powershell.exe -Command "Remove-Item -Recurse -Force 'E:\\IIS\\judge\\ClientApp\\*'"
+      exit
+      EOF
+    - sshpass -p "$SSH_PASSWORD" scp -o StrictHostKeyChecking=no -r dist/* $SSH_USER@$SSH_HOST:/E:/IIS/judge/ClientApp
+  tags:
+    - runner
+  only:
+    - Deployment

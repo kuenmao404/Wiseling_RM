@@ -1,0 +1,97 @@
+
+// @import url('https://fonts.googleapis.com/css?family=Roboto')
+
+.randomdice
+    display: flex
+    flex-direction: column
+    align-items: center
+    // width: 300px
+
+.randomdice-h2
+    margin: 0px
+    padding: 10px 0px
+    font-weight: bolder
+
+.randomdice-container
+    padding: 5px
+    width: 350px
+    display flex
+    flex-direction: column
+    align-items: center
+    
+
+.randomdice-result
+    opacity 0
+    transition: all .4s
+    margin-top: 10px
+    color: #111111
+
+.randomdice-num
+    color: #ae0404
+
+.randomdice-result-appear
+    position: relative
+    opacity 1
+    animation-name: MoveToRight;    
+    animation-duration: 1s;
+
+@keyframes MoveToRight {
+    0% { 
+        top: -15px;     
+        opacity 0; 
+    }
+    100% { 
+        top: 0px;     
+        opacity 1; 
+    }
+}
+
+.randomdice-input
+    padding: 10px
+    border-radius: 5px
+    outline: none
+    border: none;
+    margin: 0px
+    background-color : #f4f4f4
+    border-bottom: 2px solid transparent;
+    transition: all 0.5s;
+    user-select none
+    &:focus
+        border-bottom: 2px solid #a986fb;
+
+
+
+.randomdice-input::-webkit-outer-spin-button,
+.randomdice-input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+.randomdice-input[type="number"]{-moz-appearance:textfield;}
+
+
+.randomdice-en108
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.randomdice-en108-img
+    width: 200px
+
+
+.randomdice-friend
+    display: flex
+    flex-direction: column
+    align-items: center
+    >h2
+        font-weight: bolder
+
+.randomdice-friend-title
+    padding: 0
+    margin: 0
+    text-shadow: 1px 1px 1px #000;
+    cursor: pointer;
+    text-decoration: none
+    color: #e28753
+    font-weight: bolder;
+    font-size: 18px
+    font-family: 'Roboto'

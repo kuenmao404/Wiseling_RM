@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[URLScheme] (
+    [SID]    SMALLINT       IDENTITY (1, 1) NOT NULL,
+    [Scheme] NVARCHAR (10)  NULL,
+    [CDes]   NVARCHAR (255) NULL,
+    CONSTRAINT [PK_URLScheme] PRIMARY KEY CLUSTERED ([SID] ASC),
+    CONSTRAINT [UQ_URLScheme] UNIQUE NONCLUSTERED ([Scheme] ASC)
+);
+

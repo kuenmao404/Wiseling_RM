@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>WiseLing_SQL</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{aba4f66e-00de-4bae-97f0-79f6c6d6b394}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>WiseLing_SQL</RootNamespace>
+    <AssemblyName>WiseLing_SQL</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Security\" />
+    <Folder Include="Anl\" />
+    <Folder Include="Anl\Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\UserAgent.sql" />
+    <Build Include="dbo\Tables\URLScheme.sql" />
+    <Build Include="dbo\Tables\URL.sql" />
+    <Build Include="dbo\Tables\SystemConfig.sql" />
+    <Build Include="dbo\Tables\StatusCode.sql" />
+    <Build Include="dbo\Tables\Post.sql" />
+    <Build Include="dbo\Tables\Permission.sql" />
+    <Build Include="dbo\Tables\ORel.sql" />
+    <Build Include="dbo\Tables\Object.sql" />
+    <Build Include="dbo\Tables\Nation.sql" />
+    <Build Include="dbo\Tables\MSession.sql" />
+    <Build Include="dbo\Tables\Member.sql" />
+    <Build Include="dbo\Tables\LogSearch.sql" />
+    <Build Include="dbo\Tables\LogObject.sql" />
+    <Build Include="dbo\Tables\LogManTx.sql" />
+    <Build Include="dbo\Tables\LogMan.sql" />
+    <Build Include="dbo\Tables\LogError.sql" />
+    <Build Include="dbo\Tables\LogDir.sql" />
+    <Build Include="dbo\Tables\Inheritance.sql" />
+    <Build Include="dbo\Tables\Groups.sql" />
+    <Build Include="dbo\Tables\GM.sql" />
+    <Build Include="dbo\Tables\EntityM2DC.sql" />
+    <Build Include="dbo\Tables\Entity.sql" />
+    <Build Include="dbo\Tables\ContentType.sql" />
+    <Build Include="dbo\Tables\CO.sql" />
+    <Build Include="dbo\Tables\Class.sql" />
+    <Build Include="dbo\Tables\Archive.sql" />
+    <Build Include="dbo\Views\vs_SubClass.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Views\vs_Post.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Views\vs_ObjectList.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Views\vs_Member.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Views\vs_Archive.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fs_getSHA2_512Encode.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fs_getNamePath.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fs_getMD5Encode.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fs_getIDPath.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fs_checkUserPermission.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fs_checkBitwise.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\xps_addNewMember.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\xp_insertClass.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertArchive.sql" />
+    <Build Include="dbo\Tables\Action.sql" />
+    <Build Include="dbo\Stored Procedures\xp_checkSessionToken.sql" />
+    <Build Include="dbo\Tables\UUID2View.sql" />
+    <Build Include="dbo\Tables\OC.sql" />
+    <Build Include="dbo\Tables\MG.sql" />
+    <Build Include="dbo\Tables\GC.sql" />
+    <Build Include="dbo\Tables\CRel.sql" />
+    <Build Include="dbo\Tables\CG.sql" />
+    <Build Include="dbo\Views\vd_pubicUUID2View.sql" />
+    <Build Include="dbo\Views\vd_logError.sql" />
+    <Build Include="dbo\Stored Procedures\xp_signOut.sql" />
+    <Build Include="dbo\Stored Procedures\xp_signIn_sso.sql" />
+    <Build Include="dbo\Tables\UUID2TX.sql" />
+    <Build Include="dbo\Tables\PS.sql" />
+    <Build Include="dbo\Views\vd_LogManTx.sql" />
+    <Build Include="dbo\Functions\fn_getPermissionDes.sql" />
+    <Build Include="dbo\Functions\fn_getCIDPermission.sql" />
+    <Build Include="dbo\Tables\Video.sql" />
+    <Build Include="dbo\Tables\COLog.sql" />
+    <Build Include="dbo\Tables\Channel.sql" />
+    <Build Include="dbo\Views\vd_Video_Pub.sql" />
+    <Build Include="dbo\Views\vd_UUID2TX_View.sql" />
+    <Build Include="dbo\Views\vd_ClassMemberNext.sql" />
+    <Build Include="dbo\Stored Procedures\xp_tmp.sql" />
+    <Build Include="dbo\Tables\NText.sql" />
+    <Build Include="dbo\Tables\Note.sql" />
+    <Build Include="dbo\Tables\NC.sql" />
+    <Build Include="dbo\Tables\CN.sql" />
+    <Build Include="dbo\Views\vd_MemberWatchHistory.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deleteClass.sql" />
+    <Build Include="dbo\Views\vd_MemberClassNoteVideo.sql" />
+    <Build Include="dbo\Views\vd_MemberNoteClass_Front.sql" />
+    <Build Include="dbo\Stored Procedures\xp_updateNote.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deleteNote.sql" />
+    <Build Include="dbo\Tables\Tx.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertNote.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertLogErr.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertAction.sql" />
+    <Build Include="dbo\Views\vd_UUID2TxSP.sql" />
+    <Build Include="dbo\Views\vd_UUID2Tx.sql" />
+    <Build Include="dbo\Stored Procedures\xp_watchHistory_Exit.sql" />
+    <Build Include="dbo\Stored Procedures\xp_watchHistory_Enter.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertLog.sql" />
+    <Build Include="dbo\Views\vd_SystemObjectParametersSL.sql" />
+    <Build Include="dbo\Views\vd_SystemObjectParameters.sql" />
+    <Build Include="dbo\Views\vd_SystemObjectColumnSL.sql" />
+    <Build Include="dbo\Views\vd_SystemObjectColumn.sql" />
+    <Build Include="dbo\Views\vd_SystemObjectAllSL.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertLogManTxFromApi.sql" />
+    <Build Include="dbo\Stored Procedures\xp_extended_properties_SL.sql" />
+    <Build Include="dbo\Views\vd_SysObjectSL_ISchemeParam.sql" />
+    <Build Include="dbo\Stored Procedures\xp_getParamDS.sql" />
+    <Build Include="dbo\Functions\fn_getCIDPermission2.sql" />
+    <Build Include="dbo\Stored Procedures\xp_IT108Video.sql" />
+    <Build Include="dbo\Tables\TC.sql" />
+    <Build Include="dbo\Tables\Tag.sql" />
+    <Build Include="dbo\Tables\CT.sql" />
+    <Build Include="dbo\Views\vd_RootNext.sql" />
+    <Build Include="dbo\Views\vd_RootCourse.sql" />
+    <Build Include="dbo\Views\vd_Root.sql" />
+    <Build Include="dbo\Views\vd_MemberClassNoteBook.sql" />
+    <Build Include="dbo\Views\vd_MemberClassCourseNext.sql" />
+    <Build Include="dbo\Views\vd_Course_Pub.sql" />
+    <Build Include="dbo\Views\vd_Course.sql" />
+    <Build Include="dbo\Views\vd_Archive.sql" />
+    <Build Include="dbo\Functions\fn_openJsonPS.sql" />
+    <Build Include="dbo\Views\vd_ClassPermissionMember.sql" />
+    <Build Include="dbo\Views\vd_ClassPermissionGroup.sql" />
+    <Build Include="dbo\Views\vd_ClassPermission.sql" />
+    <Build Include="dbo\Views\vd_ArchiveClass.sql" />
+    <Build Include="dbo\Views\vd_Archive_Pub.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertCourse.sql" />
+    <Build Include="dbo\Views\vd_RootGroup.sql" />
+    <Build Include="dbo\Views\vd_CourseClassGroup.sql" />
+    <Build Include="dbo\Functions\fn_getChildClassWithParent.sql" />
+    <Build Include="dbo\Functions\fn_getChildClass.sql" />
+    <Build Include="dbo\Stored Procedures\xp_updateClassImgEDes.sql" />
+    <Build Include="dbo\Views\vd_Tag_Pub.sql" />
+    <Build Include="dbo\Views\vd_SingleTagCourse_Pub.sql" />
+    <Build Include="dbo\Views\vd_SingleTagCourse.sql" />
+    <Build Include="dbo\Stored Procedures\xp_updateCourse.sql" />
+    <Build Include="dbo\Views\vd_CourseNext.sql" />
+    <Build Include="dbo\Stored Procedures\xp_renameClass.sql" />
+    <Build Include="dbo\Views\vd_CourseChapterVideo.sql" />
+    <Build Include="dbo\Views\vd_CourseChapter_Pub.sql" />
+    <Build Include="dbo\Views\vd_CourseChapter.sql" />
+    <Build Include="dbo\Tables\ApplyHistoryCourse.sql" />
+    <Build Include="dbo\Views\vd_MGGroup.sql" />
+    <Build Include="dbo\Stored Procedures\xp_getCourseMemberPermission.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deleteCourse.sql" />
+    <Build Include="dbo\Views\vd_ApplyCourse.sql" />
+    <Build Include="dbo\Stored Procedures\xp_handleApplyCourse.sql" />
+    <Build Include="dbo\Stored Procedures\xp_delelteApplyCourse.sql" />
+    <Build Include="dbo\Stored Procedures\xp_applyCourse.sql" />
+    <Build Include="dbo\Views\vd_CourseClassGroupMember.sql" />
+    <Build Include="dbo\Views\vd_MemberGroup.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deleteCourseMember.sql" />
+    <Build Include="dbo\Stored Procedures\xp_updateCourseChapter.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertVideoFromApi.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertCourseChapterVideo.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertCourseChapter.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deleteCourseChapterVideo.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deleteCourseChapter.sql" />
+    <Build Include="Security\WiseLingPublic.sql" />
+    <Build Include="dbo\Tables\COHistory.sql" />
+    <Build Include="dbo\Tables\COCourseHistory.sql" />
+    <Build Include="dbo\Views\vd_MemberCourseClassGroup.sql" />
+    <Build Include="dbo\Stored Procedures\xp_quitCourse.sql" />
+    <Build Include="dbo\Views\vd_CourseClassGroup_Front.sql" />
+    <Build Include="dbo\Stored Procedures\xp_sortCourseChapterVideo.sql" />
+    <Build Include="dbo\Stored Procedures\xp_sortCourseChapter.sql" />
+    <Build Include="dbo\Views\vd_CourseTeachVideo.sql" />
+    <Build Include="dbo\Tables\NoteCourse.sql" />
+    <Build Include="dbo\Tables\NCCourse.sql" />
+    <Build Include="dbo\Tables\CNCourse.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertTeach_Course.sql" />
+    <Build Include="dbo\Views\vd_CourseTeachVideoNote.sql" />
+    <Build Include="dbo\Stored Procedures\xp_updateTeach_Course.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deleteTeach_Course.sql" />
+    <Build Include="dbo\Stored Procedures\xp_IT108_Move_CourseTeach.sql" />
+    <Build Include="dbo\Stored Procedures\xp_manageCourseMemberGroup.sql" />
+    <Build Include="dbo\Views\vd_MemberClassCourse.sql" />
+    <Build Include="dbo\Tables\InviteHistory.sql" />
+    <Build Include="dbo\Stored Procedures\xp_inviteCourseMember.sql" />
+    <Build Include="dbo\Views\vd_InviteHistory.sql" />
+    <Build Include="dbo\Views\vd_AliveToken.sql" />
+    <Build Include="dbo\Functions\fn_getEMailState.sql" />
+    <Build Include="dbo\Stored Procedures\xp_inviteGroupResponse.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deleteInviteCourse.sql" />
+    <Build Include="dbo\Stored Procedures\xp_activeToken.sql" />
+    <Build Include="dbo\Functions\fn_getRefreshSID.sql" />
+    <Build Include="dbo\Views\vd_MemberClassCourse.sql" />
+    <Build Include="dbo\Views\vd_CourseClassGroup_Classonly.sql" />
+    <Build Include="dbo\Views\vd_COVideo.sql" />
+    <Build Include="dbo\Stored Procedures\xp_updateVListParagraph.sql" />
+    <Build Include="dbo\Tables\tmp.sql" />
+    <Build Include="dbo\Stored Procedures\xp_LockTest_Buffer.sql" />
+    <Build Include="dbo\Stored Procedures\xp_LockTest.sql" />
+    <Build Include="dbo\Views\vd_PList_Pub.sql" />
+    <Build Include="dbo\Views\vd_PList.sql" />
+    <Build Include="dbo\Views\vd_MemberClassPList.sql" />
+    <Build Include="dbo\Stored Procedures\xp_updatePList.sql" />
+    <Build Include="dbo\Stored Procedures\xp_sortPList.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertPList.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deletetPList.sql" />
+    <Build Include="dbo\Views\vd_PListNote_Pub.sql" />
+    <Build Include="dbo\Views\vd_PListNote.sql" />
+    <Build Include="dbo\Views\vd_Note.sql" />
+    <Build Include="dbo\Views\vd_MemberNote_PList.sql" />
+    <Build Include="dbo\Stored Procedures\xp_sortPListNote.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertPListNote.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deletePListNote.sql" />
+    <Build Include="dbo\Views\vd_MemberClassHistory.sql" />
+    <Build Include="dbo\Views\vd_CourseHistory.sql" />
+    <Build Include="dbo\Tables\HeatMapContent.sql" />
+    <Build Include="dbo\Tables\CalendarHeatMap.sql" />
+    <Build Include="dbo\Stored Procedures\xp_IT108_Move_Note.sql" />
+    <Build Include="dbo\Tables\Problem.sql" />
+    <Build Include="dbo\Views\vd_Problem.sql" />
+    <Build Include="dbo\Stored Procedures\xp_IT108_Move_Problem.sql" />
+    <Build Include="dbo\Views\vd_VideoProblem_Pub.sql" />
+    <Build Include="dbo\Views\vd_RootTagNext.sql" />
+    <Build Include="dbo\Views\vd_RootTag.sql" />
+    <Build Include="dbo\Views\vd_ProblemTag_Pub.sql" />
+    <Build Include="dbo\Views\vd_CourseChapterItem.sql" />
+    <Build Include="dbo\Views\vd_AlgorithmTag.sql" />
+    <Build Include="dbo\Stored Procedures\xp_sortCourseChapterItem.sql" />
+    <Build Include="dbo\Stored Procedures\xp_IT108_Move_VideoProblem.sql" />
+    <Build Include="dbo\Stored Procedures\xp_IT108_Move_ProblemTag.sql" />
+    <Build Include="dbo\Stored Procedures\xp_IT108_Move_CourseChapter.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertCourseChapterItem.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deleteCourseChapterItem.sql" />
+    <Build Include="dbo\Views\vd_MemberCalendarHeatMap.sql" />
+    <Build Include="dbo\Views\vd_CalendarHeatMap.sql" />
+    <Build Include="dbo\Functions\fn_getCalendarHeatMapData.sql" />
+    <Build Include="dbo\Stored Procedures\xp_getCourseChapterProblem.sql" />
+    <Build Include="dbo\Tables\CText.sql" />
+    <Build Include="dbo\Views\vd_ProblemAll_Pub.sql" />
+    <Build Include="dbo\Tables\MSession_log.sql" />
+    <Build Include="dbo\Tables\Report.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insReport.sql" />
+    <Build Include="dbo\Stored Procedures\xp_IT108_Move_vList.sql" />
+    <Build Include="dbo\Stored Procedures\xp_IT108_Move_pList.sql" />
+    <Build Include="dbo\Stored Procedures\xp_IT108_Move_User.sql" />
+    <Build Include="dbo\Views\vd_MemberClassNoteBook_Pub.sql" />
+    <Build Include="dbo\Stored Procedures\xp_IT108_Move_Video.sql" />
+    <Build Include="dbo\Views\vd_CourseTeachVideo_system.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertCourseChapterItem_PlayList.sql" />
+    <Build Include="dbo\Views\vd_Video.sql" />
+    <Build Include="dbo\Tables\RO.sql" />
+    <Build Include="dbo\Tables\MileStone.sql" />
+    <Build Include="dbo\Views\vd_MileStone_Pub.sql" />
+    <Build Include="dbo\Stored Procedures\xp_updateMileStone.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertMileStone.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deleteMileStone.sql" />
+    <Build Include="dbo\Views\vd_RootMileStone.sql" />
+    <Build Include="dbo\Tables\MapH.sql" />
+    <Build Include="dbo\Views\vd_MemberWatchHistoryMap.sql" />
+    <Build Include="dbo\Views\vd_CalendarHeatMap_sys.sql" />
+    <Build Include="dbo\Tables\Solution.sql" />
+    <Build Include="dbo\Views\vd_PLanguage_Pub.sql" />
+    <Build Include="dbo\Functions\fn_formatBracket.sql" />
+    <Build Include="dbo\Tables\OCT.sql" />
+    <Build Include="dbo\Views\vd_ProblemLang.sql" />
+    <Build Include="dbo\Views\vd_PlangContentType.sql" />
+    <Build Include="dbo\Views\vd_JudgeRoot.sql" />
+    <Build Include="dbo\Views\vd_ClassProblem.sql" />
+    <Build Include="dbo\Views\vd_ClassProblemSolution.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertSolution.sql" />
+    <Build Include="dbo\Stored Procedures\xp_checkSolution.sql" />
+    <Build Include="dbo\Tables\JudgeSolve.sql" />
+    <Build Include="dbo\Tables\CJS.sql" />
+    <Build Include="dbo\Stored Procedures\xp_solveJudgeProblem.sql" />
+    <Build Include="dbo\Stored Procedures\xp_checkSolveProblem.sql" />
+    <Build Include="dbo\Tables\JudgeKind.sql" />
+    <Build Include="dbo\Views\vd_JudgeSolveSolution.sql" />
+    <Build Include="dbo\Views\vd_JudgeSolve.sql" />
+    <Build Include="dbo\Tables\CSolution.sql" />
+    <Build Include="dbo\Tables\TestCase.sql" />
+    <Build Include="dbo\Tables\CTC.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertTestCase.sql" />
+    <Build Include="dbo\Stored Procedures\xp_checkTestCase.sql" />
+    <Build Include="dbo\Views\vd_ClassProblemTestCase.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deleteTestCase.sql" />
+    <Build Include="dbo\Views\vd_ClassProblemSolution_History.sql" />
+    <Build Include="dbo\Tables\ForumRel.sql" />
+    <Build Include="dbo\Tables\Forum.sql" />
+    <Build Include="dbo\Tables\CF.sql" />
+    <Build Include="dbo\Views\vd_Forum.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertForum.sql" />
+    <Build Include="dbo\Stored Procedures\xp_checkStringLimit.sql" />
+    <Build Include="dbo\Tables\Text.sql" />
+    <Build Include="dbo\Tables\MF.sql" />
+    <Build Include="dbo\Tables\FM.sql" />
+    <Build Include="dbo\Views\vd_ForumChild.sql" />
+    <Build Include="dbo\Views\vd_ClassForum.sql" />
+    <Build Include="dbo\Stored Procedures\xp_updateForum.sql" />
+    <Build Include="dbo\Stored Procedures\xp_likeORbestForum.sql" />
+    <Build Include="dbo\Stored Procedures\xp_likeORbestClassForum.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertClassForum.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deleteForum.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deleteClassForum.sql" />
+    <Build Include="dbo\Views\vd_ClassForumChild.sql" />
+    <Build Include="dbo\Tables\FT.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertClassForum&amp;Tag.sql" />
+    <Build Include="dbo\Tables\TF.sql" />
+    <Build Include="dbo\Stored Procedures\xp_updateForum&amp;Tag.sql" />
+    <Build Include="dbo\Views\vd_TF.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertPrevMember.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertCoursePrevMember.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertTeach_Course_FromM.sql" />
+    <Build Include="dbo\Views\vd_MemberClassNoteBookOwn.sql" />
+    <Build Include="dbo\Views\vd_CourseMemberHistoryStatistics.sql" />
+    <Build Include="dbo\Views\vd_CourseMember.sql" />
+    <Build Include="dbo\Views\vd_CourseHeatMapContentNote.sql" />
+    <Build Include="dbo\Views\vd_CourseHeatMapContent.sql" />
+    <Build Include="dbo\Tables\OForum.sql" />
+    <Build Include="dbo\Views\vd_ObjectForumChild.sql" />
+    <Build Include="dbo\Views\vd_ObjectForum.sql" />
+    <Build Include="dbo\Stored Procedures\xp_likeORbestObjectForum.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertObjectForum.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deleteObjectForum.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertProblem.sql" />
+    <Build Include="dbo\Stored Procedures\xp_History_New.sql" />
+    <Build Include="dbo\Stored Procedures\xp_History_Course.sql" />
+    <Build Include="dbo\Views\vd_CourseCalenderHeatMap.sql" />
+    <Build Include="dbo\Views\vd_CourseCalender.sql" />
+    <Build Include="dbo\Views\vd_CourseCalendarMemberContent.sql" />
+    <Build Include="dbo\Views\vd_CourseCalendarMember.sql" />
+    <Build Include="dbo\Stored Procedures\xp_History_Watch.sql" />
+    <Build Include="dbo\Views\vd_MemberOP.sql" />
+    <Build Include="dbo\Views\vd_CourseCalendarMemberNote.sql" />
+    <Build Include="dbo\Tables\CourseProblemMStatus.sql" />
+    <Build Include="dbo\Views\vd_CourseProblemMStatus.sql" />
+    <Build Include="dbo\Views\vd_CourseProblemMSolution.sql" />
+    <Build Include="dbo\Views\vd_VListNew.sql" />
+    <Build Include="dbo\Functions\fn_getClassPathFormEnd.sql" />
+    <Build Include="dbo\Stored Procedures\xp_updateVListDocument.sql" />
+    <Build Include="dbo\Stored Procedures\xp_sortVListDocument.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertVListDocument.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deleteVListDocument.sql" />
+    <Build Include="dbo\Views\vd_MemberClassNoteBook_New_Pub.sql" />
+    <Build Include="dbo\Views\vd_MemberClassNoteBook_New.sql" />
+    <Build Include="dbo\Stored Procedures\xp_updateVNoteBook.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertVNoteBook.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deleteVNoteBook.sql" />
+    <Build Include="dbo\Views\vd_VListNewSubClass.sql" />
+    <Build Include="dbo\Views\vd_VListNotebook.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertVListPlayList_New.sql" />
+    <Build Include="dbo\Functions\fn_getClassPCID.sql" />
+    <Build Include="dbo\Functions\fn_renameClass.sql" />
+    <Build Include="dbo\Functions\fn_moveClass.sql" />
+    <Build Include="dbo\Stored Procedures\xp_moveClass.sql" />
+    <Build Include="dbo\Stored Procedures\xp_moveVListDocument.sql" />
+    <Build Include="dbo\Stored Procedures\xp_sortVListVideo_new.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deleteVListVideo_New.sql" />
+    <Build Include="dbo\Views\vd_VListVideo.sql" />
+    <Build Include="Anl\Views\vd_Problem.sql" />
+    <Build Include="Anl\Views\vd_Note.sql" />
+    <Build Include="Anl\Views\vd_Member.sql" />
+    <Build Include="Anl\Views\vd_JudgeSolve.sql" />
+    <Build Include="Anl\Views\vd_CourseProblemMStatus.sql" />
+    <Build Include="Anl\Views\vd_CourseMember.sql" />
+    <Build Include="Anl\Views\vd_CourseHeatMapContent.sql" />
+    <Build Include="Anl\Views\vd_CourseChapterItem.sql" />
+    <Build Include="Anl\Views\vd_CourseChapter.sql" />
+    <Build Include="Anl\Views\vd_CourseCalender.sql" />
+    <Build Include="Anl\Views\vd_Course.sql" />
+    <Build Include="Security\Anl.sql" />
+    <Build Include="Anl\Views\vd_CourseMemberHistoryStatistics.sql" />
+    <Build Include="dbo\Views\vd_JudgeRootNext.sql" />
+    <Build Include="dbo\Views\vd_JudgeRootNextPivot_Pub.sql" />
+    <Build Include="dbo\Views\vd_AlgorithmTag_Pub.sql" />
+    <Build Include="dbo\Stored Procedures\xp_updateProblem.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertContentType.sql" />
+    <Build Include="dbo\Stored Procedures\xp_updateVListVideo.sql" />
+    <Build Include="dbo\Stored Procedures\xp_deleteProblem.sql" />
+    <Build Include="dbo\Stored Procedures\xp_checkSource.sql" />
+    <Build Include="dbo\Tables\UUID2PublicSP.sql" />
+    <Build Include="dbo\Stored Procedures\xp_importToCourseChapter.sql" />
+    <Build Include="dbo\Views\vd_UUID2TxSP.sql" />
+    <Build Include="dbo\Views\vd_UUID2Tx_View.sql" />
+    <Build Include="dbo\Views\vd_UUID2Tx.sql" />
+    <Build Include="dbo\Views\vd_SystemObjectParametersSL.sql" />
+    <Build Include="dbo\Views\vd_SystemObjectParameters.sql" />
+    <Build Include="dbo\Views\vd_SystemObjectColumnSL.sql" />
+    <Build Include="dbo\Views\vd_SystemObjectColumn.sql" />
+    <Build Include="dbo\Views\vd_SystemObjectAllSL.sql" />
+    <Build Include="dbo\Views\vd_SysObjectSL_ISchemeParam.sql" />
+    <Build Include="dbo\Views\vd_PublicUUID2SP.sql" />
+    <Build Include="dbo\Views\vd_pubicUUID2View.sql" />
+    <Build Include="Security\WiseLing.sql" />
+    <Build Include="dbo\Functions\fn_checkClassGroupPermission.sql" />
+    <Build Include="dbo\Stored Procedures\xp_insertVListVideo.sql" />
+  </ItemGroup>
+</Project>

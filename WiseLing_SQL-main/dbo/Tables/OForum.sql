@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[OForum] (
+    [OID] INT NOT NULL,
+    [FID] INT NOT NULL,
+    CONSTRAINT [PK_OForum] PRIMARY KEY CLUSTERED ([OID] ASC, [FID] ASC),
+    CONSTRAINT [FK_OForum_FID] FOREIGN KEY ([FID]) REFERENCES [dbo].[Forum] ([FID]),
+    CONSTRAINT [FK_OForum_OID] FOREIGN KEY ([OID]) REFERENCES [dbo].[Object] ([OID])
+);
+

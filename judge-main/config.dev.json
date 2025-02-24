@@ -1,0 +1,5 @@
+{
+  "title": "Wiseling Judge",
+  "apiurl": "https://10.21.25.2:7050",
+  "cors": true
+}

@@ -1,0 +1,8 @@
+{
+  "apiurl": "https://10.21.25.2:7050",
+  "cors": true,
+  "CodeSolve": "http://10.21.24.250:1693/problem/",
+  "autoPlay": false,
+  "mileStoneCID": 1589,
+  "isProd": false
+}

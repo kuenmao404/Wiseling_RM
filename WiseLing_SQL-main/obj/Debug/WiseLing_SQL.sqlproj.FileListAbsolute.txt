@@ -1,0 +1,8 @@
+D:\各系統\WiseLing\WiseLing_SQL\bin\Debug\WiseLing_SQL.dacpac
+D:\各系統\WiseLing\WiseLing_SQL\obj\Debug\WiseLing_SQL.sqlproj.AssemblyReference.cache
+D:\各系統\WiseLing\WiseLing_SQL\obj\Debug\Model.xml
+D:\各系統\WiseLing\WiseLing_SQL\obj\Debug\refactor.xml
+D:\各系統\WiseLing\WiseLing_SQL\obj\Debug\postdeploy.sql
+D:\各系統\WiseLing\WiseLing_SQL\obj\Debug\predeploy.sql
+D:\各系統\WiseLing\WiseLing_SQL\obj\Debug\WiseLing_SQL.dll
+D:\各系統\WiseLing\WiseLing_SQL\obj\Debug\WiseLing_SQL.pdb

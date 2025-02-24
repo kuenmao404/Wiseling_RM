@@ -1,0 +1,42 @@
+﻿CREATE TABLE [dbo].[UUID2Tx] (
+    [UID]  INT              IDENTITY (1, 1) NOT NULL,
+    [UUID] UNIQUEIDENTIFIER DEFAULT (newid()) NOT NULL,
+    [Des]  NVARCHAR (255)   NULL,
+    CONSTRAINT [PK_UUID2Tx_UID] PRIMARY KEY CLUSTERED ([UID] ASC),
+    CONSTRAINT [UQ_UUID2Tx_UUID] UNIQUE NONCLUSTERED ([UUID] ASC)
+);
+
+
+
+
+
+
+
+
+GO
+
+
+
+GO
+
+
+
+GO
+
+
+
+GO
+
+
+
+GO
+
+
+
+GO
+
+
+
+GO
+
+

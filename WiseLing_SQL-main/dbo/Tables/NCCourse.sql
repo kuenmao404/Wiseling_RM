@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[NCCourse] (
+    [NID] INT NOT NULL,
+    [CID] INT NOT NULL,
+    CONSTRAINT [PK_NCCourse] PRIMARY KEY CLUSTERED ([NID] ASC, [CID] ASC),
+    CONSTRAINT [FK_NCCourse_CID] FOREIGN KEY ([CID]) REFERENCES [dbo].[Class] ([CID]),
+    CONSTRAINT [FK_NCCourse_NID] FOREIGN KEY ([NID]) REFERENCES [dbo].[NoteCourse] ([NID])
+);
+

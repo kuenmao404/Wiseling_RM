@@ -1,0 +1,9 @@
+{
+  "title": "WiseLing",
+  "apiurl": "",
+  "cors": true,
+  "CodeSolve": "https://judge.wke.csie.ncnu.edu.tw/problem/",
+  "autoPlay": true,
+  "mileStoneCID": 2094,
+  "isProd": true
+}

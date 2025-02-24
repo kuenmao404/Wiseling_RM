@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[URL] (
+    [UID]          INT             NOT NULL,
+    [Scheme]       SMALLINT        NOT NULL,
+    [HostName]     VARCHAR (900)   NOT NULL,
+    [Path]         NVARCHAR (900)  DEFAULT ('/') NOT NULL,
+    [Title]        NVARCHAR (255)  NULL,
+    [Des]          NVARCHAR (4000) NULL,
+    [Lang]         TINYINT         NULL,
+    [ContentLen]   INT             NULL,
+    [Keywords]     NVARCHAR (255)  NULL,
+    [Indexable]    BIT             NULL,
+    [IndexInfo]    NVARCHAR (255)  NULL,
+    [SID]          INT             NULL,
+    [MD5URL]       BINARY (16)     NOT NULL,
+    [MD5]          BINARY (16)     NULL,
+    [ContentType]  SMALLINT        NULL,
+    [Weight]       TINYINT         NULL,
+    [Crawl]        TINYINT         NULL,
+    [ModifiedFreq] INT             NULL,
+    [OKFreq]       INT             NULL,
+    CONSTRAINT [PK_URL_UID] PRIMARY KEY CLUSTERED ([UID] ASC),
+    CONSTRAINT [FK_URL_Scheme] FOREIGN KEY ([Scheme]) REFERENCES [dbo].[URLScheme] ([SID]),
+    CONSTRAINT [FK_URL_SID] FOREIGN KEY ([SID]) REFERENCES [dbo].[StatusCode] ([Status]),
+    CONSTRAINT [FK_URL_UID] FOREIGN KEY ([UID]) REFERENCES [dbo].[Object] ([OID]),
+    CONSTRAINT [UQ_URL_MD5] UNIQUE NONCLUSTERED ([MD5] ASC),
+    CONSTRAINT [UQ_URL_MD5URL] UNIQUE NONCLUSTERED ([MD5URL] ASC)
+);
+

@@ -1,0 +1,43 @@
+
+.page_wrapper
+  position absolute;
+  bottom 10px;
+  transform translate(-50%, 0px);
+  left 50%;
+  display flex;
+  align-items center;
+  height 8px;
+  // visibility: hidden;
+  z-index 5;
+
+  .page_index
+    padding 6px;
+    background-color rgba(0, 0, 0, 0.1);
+    margin 0 3px;
+    border-radius 50%;
+    cursor pointer;
+    transition padding 0.2s;
+    border 0.01px solid #fff;
+
+    &:hover
+      animation-name page_hover;
+      animation-duration 0.2s;
+      padding 8px;
+      background-color rgba(0, 0, 0, 0.4);
+
+    &:active
+      background-color rgba(0, 0, 0, 0.5);
+
+  .page_select
+    background-color rgba(0, 0, 0, 0.3);
+
+  @keyframes page_hover
+    from
+      padding 6px;
+
+    to
+      padding 8px;
+
+.carousel_list_size
+  max-height 100px;
+  max-width 100%;

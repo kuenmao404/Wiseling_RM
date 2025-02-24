@@ -1,0 +1,155 @@
+@import './lib/github-markdown.css';
+@import './lib/flex.styl';
+@import './lib/resizable.styl';
+@import './calendar.styl';
+@import './carousel.styl';
+@import './lib/randomdice.styl';
+
+:root
+  --maxwidth calc((100vh - 64px) / 9 * 16);
+  --maxheight calc(100vh - 64px);
+
+*
+  font-family 'Noto Sans TC', sans-serif;
+  -webkit-app-region no-drag;
+
+html
+  position absolute;
+  top 0;
+  right 0;
+  left 0;
+  bottom 0;
+  overflow hidden;
+
+body
+  margin 0;
+  height 100%;
+  width 100%;
+  overflow auto;
+  position relative;
+
+a
+  text-decoration none;
+  color inherit;
+
+#root
+  display flex;
+  min-height 100vh;
+
+.reset-link
+  text-decoration none;
+  color inherit;
+
+.error-msg
+  color red;
+
+.transition-2
+  transition all 0.2s;
+
+.footer
+  background-color rgba(0, 0, 0, 0.74);
+  display flex;
+  flex-wrap wrap;
+  justify-content center;
+  color white;
+  padding 1em 0;
+  border-bottom 0.8em solid rgba(0, 0, 0, 0.74);
+  height auto;
+
+  // min-height 240px
+  .footer-content
+    margin 0 1em;
+    justify-content center;
+    min-width 250px;
+
+    &.footer-info
+      padding 1em;
+
+      .rowTitle
+        font-size 14px;
+        word-break keep-all;
+
+  .footer-logo
+    max-width 200px;
+
+#player
+  position absolute;
+  top 0;
+  left 50%;
+  width 100%;
+  height 100%;
+  max-width var(--maxwidth);
+  max-height var(--maxheight);
+  transform translate(-50%, 0);
+
+.video-wrapper
+  position relative;
+  padding-bottom 53%;
+  height 0;
+  max-height var(--maxheight);
+  overflow hidden;
+  margin auto;
+
+.cover
+  position absolute;
+  top 0;
+  left 0;
+  right 0;
+  bottom 0;
+
+.transform-90
+  -moz-transform rotate(90deg);
+  -webkit-transform rotate(90deg);
+  -o-transform rotate(90deg);
+  -ms-transform rotate(90deg);
+  transform rotate(90deg);
+
+.whl_pagination
+  display flex;
+  align-items center;
+
+  & > *:not(:first-child)
+    margin-left 12px;
+
+  .buttonStyle
+    width 32px;
+    height 32px;
+    border-radius 100%;
+    display flex;
+    align-items center;
+    justify-content center;
+    cursor pointer;
+    transition background 0.2s ease-in-out;
+    user-select none;
+
+    &:hover
+      color #222;
+      background #0000000a;
+      transition background 0.2s ease-in-out;
+
+  .ellipsisStyle
+    width 32px;
+    height 32px;
+    border-radius 100%;
+    display flex;
+    align-items center;
+    justify-content center;
+    user-select none;
+
+for _num in 1 .. 10
+  .max-line-{_num}
+    overflow hidden;
+    white-space nowrap;
+    text-overflow ellipsis;
+    display -webkit-box;
+    -webkit-line-clamp _num; // 可自行設定行數
+    -webkit-box-orient vertical;
+    white-space normal;
+    word-break break-all;
+
+.hover
+  &:hover
+    color #1461ad;
+
+.draggable-item
+  z-index 99999;

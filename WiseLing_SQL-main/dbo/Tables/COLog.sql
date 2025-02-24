@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[COLog] (
+    [CID]   INT      NOT NULL,
+    [OID]   INT      NOT NULL,
+    [SID]   INT      NOT NULL,
+    [Since] DATETIME DEFAULT (getdate()) NULL,
+    CONSTRAINT [PK_COLog] PRIMARY KEY CLUSTERED ([CID] ASC, [OID] ASC, [SID] ASC),
+    CONSTRAINT [FK_COLog_CID] FOREIGN KEY ([CID]) REFERENCES [dbo].[Class] ([CID]),
+    CONSTRAINT [FK_COLog_OID] FOREIGN KEY ([OID]) REFERENCES [dbo].[Object] ([OID]),
+    CONSTRAINT [FK_COLog_SID] FOREIGN KEY ([SID]) REFERENCES [dbo].[MSession] ([SID])
+);
+
