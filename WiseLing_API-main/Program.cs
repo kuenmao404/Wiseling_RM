@@ -172,4 +172,19 @@ app.UseSpa(spa =>
     spa.Options.SourcePath = "ClientApp";
 });
 
+//  新增資料庫連線測試
+try 
+{
+    using (var db = new WiseLing_API.Lib.AppDb())
+    {
+        db.Connection.Open();
+        Console.WriteLine("資料庫連線成功！");
+        db.Connection.Close();
+    }
+} 
+catch (Exception ex)
+{
+    Console.WriteLine($"資料庫連線測試失敗: {ex.Message}");
+}
+
 app.Run();
