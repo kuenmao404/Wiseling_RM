@@ -89,7 +89,7 @@ export default function Header() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block', color: "white", } }}
           >
-            智學記
+            RecordMinute
           </Typography>
         </Link>
         <Search>

@@ -20,13 +20,13 @@ import RandomDice from './randomdice/RandomDice'
 import TimeLine from './timeline'
 import Help from './help'
 import Folder from './folder'
+import TaskLayout from './task/Layout'
 import useAppStore from '../../store/app'
 import Config from 'Config'
 const { isProd } = Config
 
 function index() {
   const { isLogin } = useAccountStore()
-
   const { setTitle } = useAppStore()
 
   return (
@@ -44,7 +44,7 @@ function index() {
         <Route path="/search" element={<Search setTitle={setTitle} />} />
         <Route path="/course/*" element={<Course setTitle={setTitle} />} />
         <Route path="/help" element={<RwdWrapper content_sx={{ flex: "1 1 auto" }}><Help /></RwdWrapper>} />
-        <Route path="/note" element={isLogin ? <RwdWrapper><Note /></RwdWrapper> : <NotLogin />} />
+        {/* <Route path="/note" element={isLogin ? <RwdWrapper><Note /></RwdWrapper> : <NotLogin />} /> */}
         <Route path="/history" element={isLogin ? <RwdWrapper><History /></RwdWrapper> : <NotLogin />} />
         <Route path="/videolist" element={isLogin ? <RwdWrapper content_sx={{ flex: "1 1 auto" }}><VideoCollection setTitle={setTitle} /></RwdWrapper> : <NotLogin />} />
         <Route path="/notelist" element={isLogin ? <RwdWrapper content_sx={{ flex: "1 1 auto" }}><NoteCollection setTitle={setTitle} /></RwdWrapper> : <NotLogin />} />
@@ -54,6 +54,7 @@ function index() {
         <Route path="/auth" element={<RwdWrapper><AuthPage /></RwdWrapper>} />
         <Route path="/member/:mid" element={isLogin ? <RwdWrapper content_sx={{ flex: "1 1 auto" }}><Member /></RwdWrapper> : <NotLogin />} />
         <Route path="/folder" element={isLogin ? <RwdWrapper content_sx={{ flex: "1 1 auto" }}><Folder /></RwdWrapper> : <NotLogin />} />
+        <Route path="/tasks/*" element={<RwdWrapper content_sx={{ flex: "1 1 auto" }}><TaskLayout /></RwdWrapper>} /> {/** ToDo:先改成不登入也可以觀看 */}
       </Routes>
     </Box>
   )

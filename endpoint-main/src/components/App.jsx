@@ -60,8 +60,9 @@ const titles = {
   '/notelist': '隨選播放 - WiseLing',
   '/history': '觀看紀錄 - WiseLing',
   '/timeline': '版本里程 - WiseLing',
-  '/help': '幫助 - WiseLing',
+  '/help': '功能介紹 - WiseLing',
   '/policy': '隱私權條款 - WiseLing',
-  '/RandomDice': 'RandomDice協同回合卡片計算機 - WiseLing',
-  '/randomdice': 'RandomDice協同回合卡片計算機 - WiseLing',
+  '/tasks': '任務管理 - WiseLing',
+  // '/RandomDice': 'RandomDice協同回合卡片計算機 - WiseLing',
+  // '/randomdice': 'RandomDice協同回合卡片計算機 - WiseLing',
 }
